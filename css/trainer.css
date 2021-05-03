@@ -1,0 +1,63 @@
+.grid_1 {
+    grid-template-columns: repeat(6, 1fr);
+    grid-template-rows: repeat(6, 1fr);
+    grid-template-areas:    "_1 _1 _1 _1 _1 _1"
+                            "_2 _3 _3 _3 _3 _3"
+                            "_2 _4 _5 _5 _5 _5"
+                            "_2 _4 _6 _7 _7 _7"
+                            "_2 _4 _6 _8 _9 _9"
+                            "_2 _4 _6 _8 _10 ."
+                        ;
+}
+
+.grid_1 .item:nth-child(1) {
+    grid-area: _1;
+}
+
+.grid_1 .item:nth-child(2) {
+    grid-area: _2;
+}
+
+.grid_1 .item:nth-child(3) {
+    grid-area: _3;
+}
+
+.grid_1 .item:nth-child(4) {
+    grid-area: _4;
+}
+
+.grid_1 .item:nth-child(5) {
+    grid-area: _5;
+}
+
+.grid_1 .item:nth-child(6) {
+    grid-area: _6;
+}
+
+.grid_1 .item:nth-child(7) {
+    grid-area: _7;
+}
+
+.grid_1 .item:nth-child(8) {
+    grid-area: _8;
+}
+
+.grid_1 .item:nth-child(9) {
+    grid-area: _9;
+}
+
+.grid_1 .item:nth-child(10) {
+    grid-area: _10;
+}
+
+@media screen and (max-width: 1000px) {
+    .grid_1 {
+        grid-template-areas:    "  _1  _4  _4  _4  _4  _3  "
+                                "  _1  _5  _8  _8  _7  _3  "
+                                "  _1  _5  _9  .   _7  _3  "
+                                "  _1  _5  _9 _10  _7  _3  "
+                                "  _1  _5  _6  _6  _6  _3  "
+                                "  _1  _2  _2  _2  _2  _2  "
+                            ;
+    }
+}

@@ -1,0 +1,245 @@
+.grid_1 {
+    /* шаблон колонок: 3 колонки c фиксированной шириной */
+    grid-template-columns: 300px 300px 300px;
+    /* шаблон рядов: 2 ряда c фиксированной высотой, третий не задан */
+    grid-template-rows: 200px 150px;
+    /* высота ряда по умолчанию: третий ряд принимает это значение, т.к. для него высота не задана выше */
+    grid-auto-rows: 100px;
+}
+
+.grid_2 {
+    /* фракции: 3 колонки теперь занимают всю ширину родителя и резинятся */
+    grid-template-columns: 1fr 1fr 1fr;
+}
+
+.grid_3 {
+    /* 3-я - две ячейки из 4 */
+    grid-template-columns: 1fr 1fr 2fr;
+}
+
+.grid_4 {
+    /* 2-я - три ячейки из 5 */
+    grid-template-columns: 1fr 3fr 1fr;
+}
+
+.grid_5 {
+    /* последняя - фикс. ширины, не резинится, остальные резиновые */
+    grid-template-columns: 3fr 1fr 300px;
+}
+
+.grid_6 {
+    /* аналог записи 1fr 1fr 1fr */
+    grid-template-columns: repeat(3, 1fr);
+}
+
+.grid_7 {
+    /* чередование: 4 колонки: [1fr 2fr] [1fr 2fr] */
+    grid-template-columns: repeat(2, 1fr 2fr);
+}
+
+.grid_8 {
+    /* 5 колонок: 1 - фиксированной ширины, затем чередование [1fr 2fr] [1fr 2fr] */
+    grid-template-columns: 400px repeat(2, 1fr 2fr);
+}
+
+.grid_9 {
+    /* первая занимает 500px и начнет сжиматься до 200px только после того, как сожмутся последние две */
+    grid-template-columns: minmax(200px, 500px) 1fr 1fr;
+}
+
+.grid_10 {
+    grid-template-columns: minmax(100px, 300px) 2fr 1fr;
+    /* высота ряда по контенту, но не меньше 100px */
+    grid-auto-rows: minmax(100px, auto);
+}
+
+.grid_11 {
+    /* вертикальный порядок: column / row */
+    grid-auto-flow: column;
+    grid-template-rows: 1fr 1fr 1fr;
+}
+
+.grid_12 {
+    /* заполнить ширину родителя блоками по 300px насколько возможно; колонки складываются */
+    grid-template-columns: repeat(auto-fill, 300px);
+}
+
+.grid_13 {
+    /* комбинируем с minmax: при достижении min колонки перескакивают */
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+}
+
+.grid_14 {
+    /* auto-fill: не заполняют всю ширину родителя, остается пространство */
+    grid-template-columns: repeat(auto-fill, minmax(75px, 1fr));
+}
+
+.grid_15 {
+    /* auto-fit - заполняют всю ширину родителя */
+    grid-template-columns: repeat(auto-fit, minmax(75px, 1fr));
+}
+
+
+
+.grid_16 {
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: repeat(3, 200px);
+}
+
+.grid_16 .item:nth-child(1) {
+    grid-column-start: 1;
+    /* растянется на две ячейки, т.е. достигнет 3 линии */
+    grid-column-end: 3;
+    /* короткая запись */
+    grid-column: 1 / 3;
+}
+
+
+
+.grid_17 {
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: repeat(3, 200px);
+}
+
+.grid_17 .item:nth-child(1) {
+    grid-column-start: 1;
+    /* растянется на всю ширину (4 колонки из 4, достигнет 5 линии) */
+    grid-column-end: 5;
+    /* аналогично растянется на всю ширину */
+    grid-column-end: -1;
+    /* короткая запись: стартовая линия / конечная линия */
+    grid-column: 1 / -1;
+}
+
+
+
+
+
+/* Позиционирование
+==================================================================================================== */
+.grid_18 {
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: repeat(3, 200px);
+    /* короткая запись: сначала ряды, затем колонки */
+    grid-template: repeat(3, 200px) / repeat(4, 1fr);
+}
+
+.grid_18 .item:nth-child(1) {
+    /* на всю ширину родителя */
+    grid-column: 1 / -1;
+}
+
+.grid_18 .item:nth-child(2) {
+    grid-column: 1;
+    grid-row: 2;
+}
+
+.grid_18 .item:nth-child(3) {
+    /* третий блок занимает две колонки посередине, начинается на 2 и заканчивается на 4 линии */
+    grid-column: 2 / 4;
+    grid-row: 2;
+}
+
+
+
+.grid_19 {
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: repeat(3, 200px);
+}
+
+.grid_19 .item:nth-child(1) {
+    grid-column: 1 / -1;
+    /* указываем стартовую горизонтальную линию для первого элемента (вторая линия) */
+    grid-row: 2;
+}
+
+.grid_19 .item:nth-child(2) {
+    grid-column: 1;
+    /* указываем стартовую горизонтальную линию для второго элемента (первая линия) */
+    grid-row: 1;
+}
+
+.grid_19 .item:nth-child(3) {
+    grid-column: 2 / 4;
+    /* указываем горизонтальную линию для третьего элемента (первая линия) */
+    grid-row: 1;
+}
+
+
+
+.grid_20 {
+    grid-template-columns: 1fr 2fr 1fr;
+    grid-template-rows: repeat(3, minmax(200px, auto));
+}
+
+.grid_20 .item:nth-child(1) {
+    grid-column: 1 / 3;
+    grid-row: 1 / 3;
+
+    align-self: start;
+    align-self: end;
+    align-self: center;
+    align-self: stretch;
+    justify-self: start;
+    justify-self: end;
+    justify-self: center;
+    justify-self: stretch;
+}
+
+
+
+
+
+/* Управление областями
+==================================================================================================== */
+.grid_21 {
+    grid-template-areas: 
+        "header"
+        "article"
+        "aside"
+        "footer";
+}
+
+.grid_21 header {
+    grid-area: header;
+}
+
+.grid_21 article {
+    grid-area: article;
+}
+
+.grid_21 aside {
+    grid-area: aside;
+}
+
+.grid_21 footer {
+    grid-area: footer;
+}
+
+@media (min-width: 640px) {
+    .grid_21 {
+        grid-template-columns: 2fr 4fr;
+        grid-template-areas: 
+            "header header"
+            "aside article"
+            /* точка = пустота */
+            /* "footer ."; */
+            "aside footer"
+    }
+}
+
+
+
+.grid_22 {
+    grid-template-columns: repeat(4, 2fr);
+}
+
+.grid_22 > .item:last-child {
+    display: grid;
+	grid-template-columns: 1fr 1fr;
+}
+
+.grid_22 > .item:nth-last-child(-n+2) {
+    /* занять два места начиная с конца */
+    grid-column-end: span 2;
+}

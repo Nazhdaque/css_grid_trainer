@@ -1,0 +1,220 @@
+@import url(/css/normalize.css);
+
+body, html {
+    height: 100%;
+}
+
+.wrapper {
+    background-color: rgba(5,10,30,1);
+    font-family: 'Roboto', sans-serif;
+    color: white;
+    min-height: 100%;
+}
+
+.limiter {
+    max-width: 1200px;
+    margin: auto;
+}
+
+.limiter .grid .item p {
+    font-size: 1.5rem;
+    font-weight: 500;
+}
+
+.grid {
+    display: grid;
+    justify-content: center;
+    padding: 20px;
+    /* вертикальный gap */
+    column-gap: 20px;
+    /* горизонтальный gap */
+    row-gap: 20px;
+    /* вертикальный и горизонтальный gap */
+    gap: 20px;
+}
+
+.num {
+    padding: 75px 0 25px;
+    margin: auto;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+}
+
+.num .item {
+    cursor: pointer;
+}
+
+.item {
+    border-radius: 10px;
+    padding: 10px;
+    font-size: 2rem;
+    font-weight: 900;
+    position: relative;
+    transform-style: preserve-3d;
+}
+
+.item::before {
+    position: absolute;
+    content: '';
+    width: calc(100% + 4px);
+    height: calc(100% + 4px);
+    border-radius: 12px;
+    left: -2px;
+    right: 0px;
+    top: -2px;
+    bottom: 0;
+    transform: translateZ(-1px);
+}
+
+.item::after {
+    position: absolute;
+    content: '';
+    width: 100%;
+    height: 100%;
+    border-radius: 10px;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    opacity: 0;
+    transition: opacity .5s cubic-bezier(.6,0,0,3);
+    z-index: -1;
+}
+
+.item:hover::after {
+    opacity: 1;
+}
+
+.item .subitem {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50%;
+    width: 60px;
+    height: 60px;
+    transition: .5s cubic-bezier(.6,0,0,3);
+    text-shadow: 3px 0px 3px rgba(5,10,30,.5);
+    box-shadow: 6px 0px 6px -3px rgba(5,10,30,.5);
+}
+
+.grid .item .item {
+    transform: translateZ(1px);
+    margin: 20px;
+}
+
+.grid .item .subitem {
+    transition: .1s ease;
+    margin-left: 0;
+}
+
+.grid .item:hover .subitem {
+    border: 2px solid rgba(250,250,0,1);
+    color: rgba(250,250,0,1);
+    text-shadow: 6px 0px 6px rgba(5,10,30,.5);
+    box-shadow: 12px 0px 12px -6px rgba(5,10,30,.5);
+    margin-left: calc(50% - 32px);
+}
+
+.limiter .grid_0 .item:hover .subitem,
+.limiter .num .item:hover .subitem {
+    margin-left: initial;
+}
+
+.item .subitem,
+/*.grid_0 */.item:hover .subitem {
+    border: 2px solid rgba(0,200,250,1);
+    color: rgba(0,200,250,1);
+}
+
+.item:nth-child(2n-1) .subitem,
+/*.grid_0 */.item:nth-child(2n-1) .subitem {
+    border: 2px solid rgba(0,200,0,1);
+    color: rgba(0,200,0,1);
+}
+
+.limiter .num .item .subitem {
+    border: 2px solid rgba(250,250,0,1);
+    color: rgba(250,250,0,1);
+}
+
+
+
+.item:nth-child(2n-1),
+.item:nth-child(2n-1):hover::before {
+    background: linear-gradient(90deg, rgba(5,10,30,1) 0%, rgba(0,200,0,1) 100%);
+}
+
+.item:nth-child(2n-1)::after {
+    background: linear-gradient(270deg, rgba(5,10,30,1) 0%, rgba(0,200,0,1) 100%);
+}
+
+.item:nth-child(2n-1)::before {
+    background: linear-gradient(270deg, rgba(5,10,30,1) 0%, rgba(0,200,0,1) 100%);
+}
+
+
+
+.item:nth-child(2n),
+.item:nth-child(2n):hover::before {
+    background: linear-gradient(90deg, rgba(5,10,30,1) 0%, rgba(0,200,250,1) 100%);
+}
+
+.item:nth-child(2n)::after {
+    background: linear-gradient(270deg, rgba(5,10,30,1) 0%, rgba(0,200,250,1) 100%);
+}
+
+.item:nth-child(2n)::before {
+    background: linear-gradient(270deg, rgba(5,10,30,1) 0%, rgba(0,200,250,1) 100%); 
+}
+
+
+
+.num .item,
+.num .item:hover::before {
+    background: linear-gradient(90deg, rgba(5,10,30,1) 0%, rgba(250,250,0,1) 100%);
+}
+
+.num .item::after {
+    background: linear-gradient(270deg, rgba(5,10,30,1) 0%, rgba(250,250,0,1) 100%);
+}
+
+.num .item::before {
+    background: linear-gradient(270deg, rgba(5,10,30,1) 0%, rgba(250,250,0,1) 100%); 
+}
+
+
+
+.item .item,
+.item .item:hover::before {
+    background: linear-gradient(90deg, rgba(5,10,30,1) 0%, rgba(250,250,0,1) 100%); 
+}
+
+.item .item::after {
+    background: linear-gradient(270deg, rgba(5,10,30,1) 0%, rgba(250,250,0,1) 100%);
+}
+
+.item .item::before {
+    background: linear-gradient(270deg, rgba(5,10,30,1) 0%, rgba(250,250,0,1) 100%);
+}
+
+
+
+.item:hover::after {
+    background: linear-gradient(270deg, rgba(5,10,30,1) 0%, rgba(250,250,0,1) 100%);
+}
+
+.grid .item:hover::before {
+    background: linear-gradient(90deg, rgba(5,10,30,1) 0%, rgba(250,250,0,1) 100%); 
+}
+
+
+
+.grid_0 {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.grid_0 > div {
+    cursor: pointer;
+}
