@@ -1,12 +1,13 @@
 @import url(/css/normalize.css);
 
-body, html {
+body,
+html {
     height: 100%;
 }
 
 .wrapper {
-    background-color: rgba(5,10,30,1);
-    font-family: 'Roboto', sans-serif;
+    background-color: rgba(5, 10, 30, 1);
+    font-family: "Roboto", sans-serif;
     color: white;
     min-height: 100%;
 }
@@ -56,7 +57,7 @@ body, html {
 
 .item::before {
     position: absolute;
-    content: '';
+    content: "";
     width: calc(100% + 4px);
     height: calc(100% + 4px);
     border-radius: 12px;
@@ -69,7 +70,7 @@ body, html {
 
 .item::after {
     position: absolute;
-    content: '';
+    content: "";
     width: 100%;
     height: 100%;
     border-radius: 10px;
@@ -78,7 +79,7 @@ body, html {
     right: 0;
     bottom: 0;
     opacity: 0;
-    transition: opacity .5s cubic-bezier(.6,0,0,3);
+    transition: opacity 0.5s cubic-bezier(0.6, 0, 0, 3);
     z-index: -1;
 }
 
@@ -93,9 +94,9 @@ body, html {
     border-radius: 50%;
     width: 60px;
     height: 60px;
-    transition: .5s cubic-bezier(.6,0,0,3);
-    text-shadow: 3px 0px 3px rgba(5,10,30,.5);
-    box-shadow: 6px 0px 6px -3px rgba(5,10,30,.5);
+    transition: 0.5s cubic-bezier(0.6, 0, 0, 3);
+    text-shadow: 3px 0px 3px rgba(5, 10, 30, 0.5);
+    box-shadow: 6px 0px 6px -3px rgba(5, 10, 30, 0.5);
 }
 
 .grid .item .item {
@@ -104,15 +105,15 @@ body, html {
 }
 
 .grid .item .subitem {
-    transition: .1s ease;
+    transition: 0.1s ease;
     margin-left: 0;
 }
 
 .grid .item:hover .subitem {
-    border: 2px solid rgba(250,250,0,1);
-    color: rgba(250,250,0,1);
-    text-shadow: 6px 0px 6px rgba(5,10,30,.5);
-    box-shadow: 12px 0px 12px -6px rgba(5,10,30,.5);
+    border: 2px solid rgba(250, 250, 0, 1);
+    color: rgba(250, 250, 0, 1);
+    text-shadow: 6px 0px 6px rgba(5, 10, 30, 0.5);
+    box-shadow: 12px 0px 12px -6px rgba(5, 10, 30, 0.5);
     margin-left: calc(50% - 32px);
 }
 
@@ -123,92 +124,136 @@ body, html {
 
 .item .subitem,
 /*.grid_0 */.item:hover .subitem {
-    border: 2px solid rgba(0,200,250,1);
-    color: rgba(0,200,250,1);
+    border: 2px solid rgba(0, 200, 250, 1);
+    color: rgba(0, 200, 250, 1);
 }
 
 .item:nth-child(2n-1) .subitem,
 /*.grid_0 */.item:nth-child(2n-1) .subitem {
-    border: 2px solid rgba(0,200,0,1);
-    color: rgba(0,200,0,1);
+    border: 2px solid rgba(0, 200, 0, 1);
+    color: rgba(0, 200, 0, 1);
 }
 
 .limiter .num .item .subitem {
-    border: 2px solid rgba(250,250,0,1);
-    color: rgba(250,250,0,1);
+    border: 2px solid rgba(250, 250, 0, 1);
+    color: rgba(250, 250, 0, 1);
 }
-
-
 
 .item:nth-child(2n-1),
 .item:nth-child(2n-1):hover::before {
-    background: linear-gradient(90deg, rgba(5,10,30,1) 0%, rgba(0,200,0,1) 100%);
+    background: linear-gradient(
+        90deg,
+        rgba(5, 10, 30, 1) 0%,
+        rgba(0, 200, 0, 1) 100%
+    );
 }
 
 .item:nth-child(2n-1)::after {
-    background: linear-gradient(270deg, rgba(5,10,30,1) 0%, rgba(0,200,0,1) 100%);
+    background: linear-gradient(
+        270deg,
+        rgba(5, 10, 30, 1) 0%,
+        rgba(0, 200, 0, 1) 100%
+    );
 }
 
 .item:nth-child(2n-1)::before {
-    background: linear-gradient(270deg, rgba(5,10,30,1) 0%, rgba(0,200,0,1) 100%);
+    background: linear-gradient(
+        270deg,
+        rgba(5, 10, 30, 1) 0%,
+        rgba(0, 200, 0, 1) 100%
+    );
 }
-
-
 
 .item:nth-child(2n),
 .item:nth-child(2n):hover::before {
-    background: linear-gradient(90deg, rgba(5,10,30,1) 0%, rgba(0,200,250,1) 100%);
+    background: linear-gradient(
+        90deg,
+        rgba(5, 10, 30, 1) 0%,
+        rgba(0, 200, 250, 1) 100%
+    );
 }
 
 .item:nth-child(2n)::after {
-    background: linear-gradient(270deg, rgba(5,10,30,1) 0%, rgba(0,200,250,1) 100%);
+    background: linear-gradient(
+        270deg,
+        rgba(5, 10, 30, 1) 0%,
+        rgba(0, 200, 250, 1) 100%
+    );
 }
 
 .item:nth-child(2n)::before {
-    background: linear-gradient(270deg, rgba(5,10,30,1) 0%, rgba(0,200,250,1) 100%); 
+    background: linear-gradient(
+        270deg,
+        rgba(5, 10, 30, 1) 0%,
+        rgba(0, 200, 250, 1) 100%
+    );
 }
-
-
 
 .num .item,
 .num .item:hover::before {
-    background: linear-gradient(90deg, rgba(5,10,30,1) 0%, rgba(250,250,0,1) 100%);
+    background: linear-gradient(
+        90deg,
+        rgba(5, 10, 30, 1) 0%,
+        rgba(250, 250, 0, 1) 100%
+    );
 }
 
 .num .item::after {
-    background: linear-gradient(270deg, rgba(5,10,30,1) 0%, rgba(250,250,0,1) 100%);
+    background: linear-gradient(
+        270deg,
+        rgba(5, 10, 30, 1) 0%,
+        rgba(250, 250, 0, 1) 100%
+    );
 }
 
 .num .item::before {
-    background: linear-gradient(270deg, rgba(5,10,30,1) 0%, rgba(250,250,0,1) 100%); 
+    background: linear-gradient(
+        270deg,
+        rgba(5, 10, 30, 1) 0%,
+        rgba(250, 250, 0, 1) 100%
+    );
 }
-
-
 
 .item .item,
 .item .item:hover::before {
-    background: linear-gradient(90deg, rgba(5,10,30,1) 0%, rgba(250,250,0,1) 100%); 
+    background: linear-gradient(
+        90deg,
+        rgba(5, 10, 30, 1) 0%,
+        rgba(150, 0, 250, 1) 100%
+    );
 }
 
 .item .item::after {
-    background: linear-gradient(270deg, rgba(5,10,30,1) 0%, rgba(250,250,0,1) 100%);
+    background: linear-gradient(
+        270deg,
+        rgba(5, 10, 30, 1) 0%,
+        rgba(150, 0, 250, 1) 100%
+    );
 }
 
 .item .item::before {
-    background: linear-gradient(270deg, rgba(5,10,30,1) 0%, rgba(250,250,0,1) 100%);
+    background: linear-gradient(
+        270deg,
+        rgba(5, 10, 30, 1) 0%,
+        rgba(150, 0, 250, 1) 100%
+    );
 }
 
-
-
 .item:hover::after {
-    background: linear-gradient(270deg, rgba(5,10,30,1) 0%, rgba(250,250,0,1) 100%);
+    background: linear-gradient(
+        270deg,
+        rgba(5, 10, 30, 1) 0%,
+        rgba(250, 250, 0, 1) 100%
+    );
 }
 
 .grid .item:hover::before {
-    background: linear-gradient(90deg, rgba(5,10,30,1) 0%, rgba(250,250,0,1) 100%); 
+    background: linear-gradient(
+        90deg,
+        rgba(5, 10, 30, 1) 0%,
+        rgba(250, 250, 0, 1) 100%
+    );
 }
-
-
 
 .grid_0 {
     display: flex;
